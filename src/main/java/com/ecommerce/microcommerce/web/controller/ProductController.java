@@ -118,6 +118,14 @@ public class ProductController {
 
     }
 
+    //trier produits par nom croissant
+    @GetMapping(value = "/TrierProduits")
+    public  List<Product> trierProduitsParOrdreAlphabetique(){
+        List<Product> produits;
+        produits = productDao.findAllByOrderByNomAsc();
+        return produits;
+    }
+
 
 
 }
